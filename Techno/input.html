@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ds</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>
+
+input[type=text],
+[type=Email],
+[type=number],
+[type=password]
+{
+    width: 40%;
+    padding: 12px 20px;
+    margin: 1% 30%;
+    display: inline-block;
+    border: 2px solid;
+    font-weight: bold;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+input[type=submit]
+ {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 1% 30%;
+    display: inline-block;
+    border: 2px solid;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+  
+</style>
+</head>
+<body>
+  <br>
+<input type="text"  pattern="[A-Za-z]"placeholder=" Enter First name" maxlength="20">
+<input type="text" placeholder=" Enter Last name" maxlength="20" pattern="[A-Za-z]">
+<input type="text"placeholder=" Enter Class" pattern="[A-Za-z0-9]+">
+<input type="text"placeholder="Enter Year of passing" maxlength="4">
+<input type="number"placeholder=" Enter Percentage of marks">
+
+<input type="submit" value="Submit">
+</body>
+</html>
+
+<script>
+  $(document).ready(function() {
+  validate();
+  $('input').on('keyup', validate);
+});
+
+function validate() {
+  var a = 0;
+  
+  // get all input fields except for type='submit'
+  var myInputs = $("input:not([type='submit'])");
+
+  myInputs.each(function(e) {
+    // if it has a value, increment the counter
+    if ($(this).val()) {
+      a += 1;
+    }
+  });
+
+  if (a == myInputs.length) {
+    $("input[type=submit]").prop("disabled", false);
+  } else {
+    $("input[type=submit]").prop("disabled", true);
+  }
+}
+</script>

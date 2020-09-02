@@ -1,0 +1,14 @@
+
+
+		
+		
+	Problem statement to run:
+		
+		- open vueapp folder in command prompt or vscose Terminal
+		
+		- npm install -> run command
+		- npm run serve
+
+		to view the student table with data fields and color various
+
+		- To run input.html file in browser to disabe submit button until all fields have a data
